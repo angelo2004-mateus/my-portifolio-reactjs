@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+
+
+@font-face {
+    font-family: kamos;
+    src: url(fonts/Satoshi-Medium.otf);
+}
+
+.bg-primary {
+    background-color: black;
+}
+
+.bg-secondary {
+    background-color: #0E0E0E;
+}
+
+.text-medium-size {
+    font-size: max(1.3vw, 20px);
+}
+
+.text-big-size {
+    font-size: max(2vw, 25px);
+}
+
+.text-small-size {
+    font-size: max(.8vw, 16px);
+    opacity: 50%;
+}
+
+.btn {
+        width: 2vw;
+        height: 2vw;
+        border-radius: 100%;
+}
+
+.btn-icon:hover:after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: white;
+    animation: scale .3s forwards;
+}
+
+@keyframes scale {
+    from{
+        scale: 0;
+    }
+
+    to {
+        scale: 1;
+    }
+}
+
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+  
+::-moz-scrollbar {
+    width: 0px;
+}

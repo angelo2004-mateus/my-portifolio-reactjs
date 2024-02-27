@@ -1,0 +1,82 @@
+import React, { useEffect, useRef } from 'react';
+import Matter from 'matter-js';
+
+const Skills = () => {
+  const canvasRef = useRef(canvasRef);
+
+  useEffect(() => {
+    const engine = Matter.Engine.create();
+    const render = Matter.Render.create({
+      element: canvasRef.current,
+      engine: engine,
+      options: {
+        width: window.width,
+        height: window.height,
+        wireframes: false,
+        background: 'transparent'
+      }
+    });
+
+    const ground = Matter.Bodies.rectangle(400, 605, 810, 60, { isStatic: true });
+    const wallLeft = Matter.Bodies.rectangle(-35, 200, 60, 810, { isStatic: true });
+    const wallRight = Matter.Bodies.rectangle(535, 200, 60, 810, { isStatic: true });
+    const ceil= Matter.Bodies.rectangle(300, -60, 810, 60, { isStatic: true });
+
+    const boxA = Matter.Bodies.rectangle(400, 200, 80, 80);
+    const boxB = Matter.Bodies.rectangle(450, 50, 80, 80);
+    const boxC = Matter.Bodies.rectangle(350, 50, 80, 80);
+    const boxD = Matter.Bodies.rectangle(250, 50, 80, 80);
+    const boxE = Matter.Bodies.rectangle(150, 50, 80, 80);
+    const boxF = Matter.Bodies.rectangle(280, 50, 80, 80);
+
+    let mouse = Matter.Mouse.create(render.canvas);
+    let mouseConstraint = Matter.MouseConstraint.create(engine, {
+      mouse: mouse,
+      constraint: {
+        render: { visible: false }
+      }
+    });
+
+    render.mouse = mouse;
+
+    Matter.World.add(engine.world, [ground, ceil, wallLeft, wallRight, boxA, boxB, boxC, boxD, boxE, boxF, mouseConstraint]);
+
+    Matter.Engine.run(engine);
+    Matter.Render.run(render);
+
+    Matter.Events.on(render, 'afterRender', () => {
+      const ctx = render.context;
+      drawText(ctx, 'React Js', boxA.position.x, boxA.position.y + 10);
+      drawText(ctx, 'HTML', boxB.position.x, boxB.position.y + 10);
+      drawText(ctx, 'CSS', boxC.position.x, boxC.position.y + 10);
+      drawText(ctx, 'JavaScript', boxD.position.x, boxD.position.y + 10);
+      drawText(ctx, 'Taiwild', boxE.position.x, boxE.position.y + 10);
+      drawText(ctx, 'Git', boxF.position.x, boxF.position.y + 10);
+    });
+
+    return () => {
+      Matter.Render.stop(render);
+      Matter.World.clear(engine.world);
+      Matter.Engine.clear(engine);
+    };
+  }, []);
+
+  const drawText = (context, text, x, y) => {
+    context.font = '20px Arial';
+    context.fillStyle = 'white';
+    context.textAlign = 'center';
+    context.fillText(text, x, y);
+  };
+
+  
+
+  return <div className='flex justify-center items-center bg-blue-300 h-[800px] w-[800px] overflow-hidden' ref={canvasRef}></div>;
+};
+
+export default Skills;
+
+
+Hello! My name is Ângelo Mateus, I'm 18 years old, and I'm passionate about the world of technology. I graduated from high school with a technical degree in electronics at the Federal Institute of Mato Grosso (IFMT) in 2022, where I discovered my passion for technology.
+      Since then, I have been dedicated to learning programming. This portfolio is a sample of the projects I've done and the skills I've acquired so far.
+      I'm excited to continue my journey in the world of technology, exploring new opportunities and contributing to making a difference with creativity and innovation.
+      Thank you for joining me on this exciting journey!
