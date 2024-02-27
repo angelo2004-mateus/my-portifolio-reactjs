@@ -9,6 +9,7 @@ import css from '../assets/img/css-3.png'
 import tailwind from '../assets/img/tailwind.svg'
 import react from '../assets/img/react.png'
 import node from '../assets/img/node.png'
+import ts from '../assets/img/ts.png'
 
 const Experience = () => {
   return (
@@ -17,6 +18,7 @@ const Experience = () => {
         <CardSkill title={'HTML'} subtitle={'Medium Nivel'} src={html}/>
         <CardSkill title={'CSS'} subtitle={'Medium Nivel'} src={css}/>
         <CardSkill title={'JavaScript'} subtitle={'Medium Nivel'} src={js}/>
+        <CardSkill title={'TypeScript'} subtitle={'Learning'} src={ts}/>
         <CardSkill title={'Tailwind'} subtitle={'Medium Nivel'} src={tailwind}/>
         <CardSkill title={'React Js'} subtitle={'Medium Nivel'} src={react}/>
         <CardSkill title={'Node Js'} subtitle={'Basic Nivel'} src={node}/>

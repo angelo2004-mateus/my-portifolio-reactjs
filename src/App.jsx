@@ -11,7 +11,7 @@ const App = () => {
   
   return (
     <BrowserRouter>
-    <section className='bg-primary flex justify-center items-center'>
+    <section className='bg-primary flex justify-center '>
       <Routes>
         <Route path='/' element={<Main />}/>
       </Routes>

@@ -5,7 +5,7 @@ import Projects from './Projects'
 
 const Section = () => {
   return (
-    <section className='w-full flex flex-col gap-20 overflow-x-hidden'>
+    <section className='bg-primary w-full flex flex-col gap-20 md:overflow-x-hidden'>
         <About />
         <Projects />
         <Experience />

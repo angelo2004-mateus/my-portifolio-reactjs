@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 
 const Menu = () => {
   return (
-    <nav className='bg-secondary rounded-2xl p-[28px] w-[500px] max-md:w-full flex flex-col justify-between'>
+    <nav className='bg-secondary rounded-2xl p-[28px] w-[500px] md:h-[90vh] max-md:w-full flex flex-col justify-between'>
       <div className='flex flex-col gap-y-2 items-start'>
         <div className='w-[70px] h-[70px] rounded-full'
         style={{backgroundImage: `url('${profilePhoto}')`, backgroundPosition: 'center', backgroundSize: 'cover' }}/>
